@@ -11,6 +11,45 @@ nameList::~nameList(){
 
 }
 
+void nameList::bubbleSort(){
+    Name *i = head;
+    int listSize = namesCounter();
+    for(int l = 0; l < listSize -1; l++){
+        Name* j = i;
+        for(int k = 0; k < listSize - l - 1; k++){
+            if(j->counter > j->next->counter){
+                string tempName = j->name;
+                int tempCount = j->counter;
+                j->name = j->next->name;
+                j->counter = j->next->counter;
+                j->next->name = tempName;
+                j->next->counter = tempCount;
+            }
+            if(j->next != NULL){
+                j = j->next;
+            }
+        }
+        if(i->previous != NULL){
+            i = i->previous;
+        }
+        if(i->next != NULL){
+            i = i->next;
+        }
+    }
+
+}
+
+//counts names in list, used in bubbleSort
+int nameList::namesCounter(){
+    int counter = 0;
+    Name *temp = head;
+    while(temp != NULL){
+        counter++;
+        temp = temp->next;
+    }
+    return counter;
+}
+
 // Inserts name at the end of the linked list
 void nameList::insertName(string name1){
     Name* temp;
@@ -40,6 +79,17 @@ void nameList::insertName(string name1){
 
 }
 
+void nameList::nameOccurrence(string name1){
+    Name* temp = head;
+    while(temp != NULL){
+        if(temp->name == name1){
+            cout << temp->name << " occurs " << temp->counter << " times." << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+    cout << "Name not found" << endl;
+}
 
 void nameList::deleteName(string name1){
     Name* temp = head;
