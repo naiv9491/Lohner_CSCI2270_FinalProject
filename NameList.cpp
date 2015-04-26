@@ -63,11 +63,15 @@ void nameList::insertName(string name1){
         return;
     }
     temp = head;
-    while(temp->next != NULL){
+    while(temp != NULL){
         if(temp->name == name1){
             temp->counter++;
             return;
         }
+        temp = temp->next;
+    }
+    temp = head;
+    while(temp->next != NULL){
         temp = temp->next;
     }
     Name *added = new Name;
