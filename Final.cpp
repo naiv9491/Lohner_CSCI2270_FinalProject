@@ -31,3 +31,27 @@ int main(int argc, char *argv[]){
         }
     }
 }
+
+
+
+
+/*
+int main()
+{
+    char keys[][8] = {"she", "sells", "sea", "shore", "the", "by", "sheer"};
+    trie_t trie;
+ 
+    initialize(&trie);
+ 
+    for(int i = 0; i < ARRAY_SIZE(keys); i++)
+    {
+        insert(&trie, keys[i]);
+    }
+ 
+    deleteKey(&trie, keys[0]);
+ 
+    printf("%s %s\n", "she", search(&trie, "she") ? "Present in trie" : "Not present in trie");
+ 
+    return 0;
+}
+*/
