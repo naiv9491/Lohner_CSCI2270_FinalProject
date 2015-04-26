@@ -31,3 +31,9 @@ Trie::getNode(){
     }
     return pNode;
 }
+
+void Trie::initialize(trie_t *pTrie)
+{
+    pTrie->root = getNode();
+    pTrie->count = 0;
+}
