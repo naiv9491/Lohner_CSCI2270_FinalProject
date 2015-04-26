@@ -22,7 +22,7 @@ class Trie
 {
 	public:
 		Trie();
-		~Trie();
+		~Trie();		
 		trie_node_t *getNode(void);
 		void initialize(trie_t *pTrie);
 		void insert(trie_t *pTrie, char key[]);
@@ -31,6 +31,6 @@ class Trie
 		int isItFreeNode(trie_node_t *pNode);
 		bool deleteHelper(trie_node_t *pNode, char key[], int level, int len);
 		void deleteKey(trie_t *pTrie, char key[]);
-		
+
 
 };
