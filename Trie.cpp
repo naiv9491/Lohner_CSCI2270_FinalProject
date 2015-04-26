@@ -37,3 +37,34 @@ void Trie::initialize(trie_t *pTrie)
     pTrie->root = getNode();
     pTrie->count = 0;
 }
+
+void Trie::insert(trie_t *pTrie, char key[])
+{
+    int level;
+    int length = strlen(key);
+    int index;
+    trie_node_t *pCrawl;
+ 
+    pTrie->count++;
+    pCrawl = pTrie->root;
+ 
+    for( level = 0; level < length; level++ )
+    {
+        index = INDEX(key[level]);
+ 
+        if( pCrawl->children[index] )
+        {
+            // Skip current node
+            pCrawl = pCrawl->children[index];
+        }
+        else
+        {
+            // Add new node
+            pCrawl->children[index] = getNode();
+            pCrawl = pCrawl->children[index];
+        }
+    }
+ 
+    // mark last node as leaf (non zero)
+    pCrawl->value = pTrie->count;
+}
