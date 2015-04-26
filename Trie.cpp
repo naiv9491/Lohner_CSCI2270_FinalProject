@@ -4,14 +4,6 @@
 #include "Trie.h"
 
 using namespace std;
- 
-#define ARRAY_SIZE(a) sizeof(a)/sizeof(a[0]) 
-#define ALPHABET_SIZE (26)
-#define INDEX(c) ((int)c - (int)'a')
- 
-#define FREE(p)
-    free(p);    
-    p = NULL;
 
 
 Trie::Trie() {
@@ -21,7 +13,7 @@ Trie::Trie() {
 Trie::~Trie() {
 }
 
-Trie::getNode(){
+trie_node_t *Trie::getNode(){
 	trie_node_t *pNode = NULL;
     pNode = (trie_node_t *)malloc(sizeof(trie_node_t));
  
@@ -143,7 +135,10 @@ bool Trie::deleteHelper(trie_node_t *pNode, char key[], int level, int len)
             if( deleteHelper(pNode->children[index], key, level+1, len) )
             {
                 // last node marked, delete it
-                FREE(pNode->children[index]);
+                /* NEED TO IMPLEMENT THIS */
+                //*******************************************************************************
+                //*******************************************************************************
+                // FREE(pNode->children[index]);
  
                 // recursively climb up, and delete eligible nodes
                 return ( !leafNode(pNode) && isItFreeNode(pNode) );
