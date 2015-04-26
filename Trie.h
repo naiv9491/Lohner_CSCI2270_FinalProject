@@ -4,7 +4,17 @@
 #include <iostream>
 #include <vector>
 
+#define ARRAY_SIZE(a) sizeof(a)/sizeof(a[0]) 
+#define ALPHABET_SIZE (26)
+#define INDEX(c) ((int)c - (int)'a')
+ 
+// #define FREE(p)
+//     free(p);    
+//     p = NULL;
+
+
 typedef struct trie_node trie_node_t;
+
 struct trie_node
 {
     int value;
@@ -34,3 +44,5 @@ class Trie
 
 
 };
+
+#endif

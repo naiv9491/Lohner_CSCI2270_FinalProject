@@ -13,6 +13,11 @@ using namespace std;
     free(p);    
     p = NULL;
 
+
+Trie::Trie() {
+	typedef struct trie_node trie_node_t;
+}
+
 Trie::~Trie() {
 }
 
