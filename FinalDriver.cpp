@@ -32,7 +32,7 @@ int main(int argc, char* argv[]){
         string response;
         getline(cin, response);
         if(response == "1"){
-            NL.printList();
+            NL.bubbleSort();
         }
         else if(response == "2"){
 
@@ -41,7 +41,9 @@ int main(int argc, char* argv[]){
 
         }
         else if(response == "4"){
-
+            cout << "Name?" << endl;
+            getline(cin, response);
+            NL.nameOccurrence(response);
         }
         else if(response == "5"){
 
