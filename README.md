@@ -12,4 +12,4 @@ Team is composed of Frederik Lohner and Chris Rhoda.
 
 We've included an executable but if you wish to compile it yourself you can use g++ Namelist.cpp FinalDriver.cpp -std=c++11 -o Final
 
-To execute run ./Final Names.txt
+To execute run ./Final namelist.txt
