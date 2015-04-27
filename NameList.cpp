@@ -11,6 +11,7 @@ nameList::~nameList(){
 
 }
 
+
 void nameList::bubbleSort(){
     Name *i = head;
     int listSize = namesCounter();
@@ -142,6 +143,18 @@ void nameList::printTopNames(int num){
     }
 
 }
+
+void nameList::printByOccurance(int num){
+    Name* temp = head;
+    while(temp!=NULL){
+        if(temp->counter == num)
+        {
+            cout << temp->name << endl;
+        }
+    }
+}
+
+
 
 
 
