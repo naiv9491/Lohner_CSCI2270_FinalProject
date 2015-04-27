@@ -128,7 +128,7 @@ void nameList::findName(string name1){
     Name* temp = head;
     while(temp != NULL){
         if(temp->name == name1){
-            cout << "Name found" << endl;
+            cout << "Name found " << endl;
             return;
         }
         temp = temp->next;
@@ -158,7 +158,26 @@ void nameList::printTopNames(int num){
 
 }
 
-void printByOcurrence(int count){
+void nameList::printBottomNames(int num){
+    int listSize = namesCounter();
+    if(num > listSize){
+        cout << "The name list is not that large" << endl;
+        return;
+    }
+    Name* temp = head;
+    for(int i = 0; i < num; i++){
+        if(i == num-1){
+            cout << temp->name << endl;
+        }
+        else{
+            cout << temp->name << " " << endl;
+        }
+        temp = temp->next;
+    }
+
+}
+
+void nameList::printByOcurrence(int count){
     Name* temp = head;
     bool foundCount = false;
     while(temp != NULL){

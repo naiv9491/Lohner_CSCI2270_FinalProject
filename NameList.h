@@ -19,6 +19,7 @@ class nameList{
         void findName(std::string); // input is name to be found
         void nameOccurrence(std::string); // input name, outputs how many times that name has appeared
         void printTopNames(int);  //input how many of the most popular names to print
+        void printBottomNames(int);
         void deleteName(std::string);
         void insertName(std::string);
         void printList();
