@@ -35,7 +35,7 @@ int main(int argc, char* argv[]){
             NL.bubbleSort();
         }
         else if(response == "2"){
-
+            NL.printList();
         }
         else if(response == "3"){
 
