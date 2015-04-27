@@ -6,6 +6,26 @@ using namespace std;
 
 int main(int argc, char *argv[]){
 
+
+	Trie t;
+	
+	char keys[][8] = {"she", "sells", "sea", "shore", "the", "by", "sheer"};
+	trie_t trie;
+	
+	t.initialize(&trie);
+	
+	for(int i = 0; i < t.ARRAY_SIZE(keys); i++)
+	{
+	    t.insert(&trie, keys[i]);
+	}
+	
+	t.deleteKey(&trie, keys[0]);
+	
+	printf("%s %s\n", "she", t.search(&trie, "she") ? "Present in trie" : "Not present in trie");
+	
+
+
+
     bool quit = false;
 
     while(!quit){
@@ -30,6 +50,7 @@ int main(int argc, char *argv[]){
             quit = true;
         }
     }
+	return 0;
 }
 
 
