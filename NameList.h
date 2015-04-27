@@ -23,7 +23,7 @@ class nameList{
         void insertName(std::string);
         void printList();
         int namesCounter(); //counts the number of names in the list
-        void printByOcurrence(int);  //print all the names that appear a certain number of times
+        void printByOcurrence(int num);  //print all the names that appear a certain number of times
     protected:
     private:
         Name* head;

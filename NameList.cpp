@@ -144,10 +144,10 @@ void nameList::printTopNames(int num){
 
 }
 
-void nameList::printByOccurance(int num){
+void nameList::printByOcurrence(int number){
     Name* temp = head;
     while(temp!=NULL){
-        if(temp->counter == num)
+        if(temp->counter == number)
         {
             cout << temp->name << endl;
         }
