@@ -122,3 +122,27 @@ void nameList::printList(){
         temp = temp->next;
     }
 }
+
+void nameList::findName(string name1){
+    Name* temp = head;
+    while(temp != NULL){
+        if(temp->name == name1){
+            cout << "Name found" << endl;
+            return;
+        }
+        temp = temp->next;
+    }
+    cout << "Name not found" << endl;
+}
+
+void nameList::printTopNames(int num){
+    int listSize = namesCounter();
+    if(num > listSize){
+        cout << "The name list is not that large" << endl;
+    }
+
+}
+
+
+
+
