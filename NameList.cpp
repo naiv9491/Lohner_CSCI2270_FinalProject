@@ -180,7 +180,7 @@ void nameList::printBottomNames(int num){
 void nameList::printByOcurrence(int count){
     Name* temp = head;
     bool foundCount = false;
-    while(temp != NULL){
+    while(temp->next != NULL){
         if(temp->counter == count){
             cout << temp->name << endl;
             foundCount = true;

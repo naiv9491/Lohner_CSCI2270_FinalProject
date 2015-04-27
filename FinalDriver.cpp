@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
         NL.insertName(word);
     }
     file.close();
-    // NL.bubbleSort();
+    NL.bubbleSort();
 
     bool quit = false;
     while(!quit){
