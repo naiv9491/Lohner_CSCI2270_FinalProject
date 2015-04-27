@@ -104,8 +104,13 @@ void nameList::deleteName(string name1){
                 temp->next->previous = NULL;
                 head = temp->next;
             }
-            if(temp->next != NULL){
+            else if(temp->next != NULL){
                 temp->next->previous = temp->previous;
+                temp->previous->next = temp->next;
+            }
+            else if(temp->next == NULL)
+            {
+                temp->previous->next = NULL;
             }
             delete temp;
             return;
