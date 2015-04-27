@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 #include "NameList.h"
 
 using namespace std;
@@ -38,7 +39,9 @@ int main(int argc, char* argv[]){
             NL.printList();
         }
         else if(response == "3"){
-
+            cout << "How many names to print?" << endl;
+            getline(cin, response);
+            NL.printTopNames(stoi(response));
         }
         else if(response == "4"){
             cout << "Name?" << endl;
