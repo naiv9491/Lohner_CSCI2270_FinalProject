@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
         NL.insertName(word);
     }
     file.close();
-    NL.bubbleSort();
+    // NL.bubbleSort();
 
     bool quit = false;
     while(!quit){
@@ -30,14 +30,13 @@ int main(int argc, char* argv[]){
         cout << "5. Insert name" << endl;
         cout << "6. Delete name" << endl;
         cout << "7. Print all names that occur a certain number of times" << endl;
-        cout << "8. Print all names that start with a certain letter" << endl;
+        cout << "8. Sort List (Bubble or Merge)" << endl;
         cout << "9. Quit" << endl;
 
         string response;
         getline(cin, response);
         if(response == "1"){
-            NL.bubbleSort();
-            NL.printList();
+            NL.printList(NL.headReturner());
         }
         else if(response == "2"){
             cout << "How many names to print?" << endl;
@@ -72,9 +71,22 @@ int main(int argc, char* argv[]){
             NL.nameOccurrence(response);
         }
         else if(response == "8"){
-            cout << "What letter do you wish to check?" << endl;
+            cout << "Do you wish to sort using bubble (1) or merge (2)?" << endl;
             getline(cin, response);
-            NL.mergeSort(Name* node);
+            if(response == "1")
+            {
+                NL.bubbleSort();
+            }
+            else if(response == "2")
+            {
+               Name* sortedList = NL.mergeSort(NL.headReturner());            
+               NL.setHead(sortedList);
+            }
+            else
+            {
+                cout << "Incorrect command." << endl;
+            }
+            NL.printList(NL.headReturner());
         }
         else if(response == "9")
         {

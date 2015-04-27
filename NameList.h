@@ -22,11 +22,13 @@ class nameList{
         void printBottomNames(int);
         void deleteName(std::string);
         void insertName(std::string);
-        void printList();
+        void printList(Name* top);
         int namesCounter(); //counts the number of names in the list
         Name* mergeSort(Name* node);
         Name* merge(Name* firstNode, Name* secondNode);
         Name* split(Name* node);
+        Name* headReturner();
+        void setHead(Name*);
         void printByOcurrence(int);  //print all the names that appear a certain number of times
     protected:
     private:

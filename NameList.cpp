@@ -11,31 +11,37 @@ nameList::~nameList(){
 }
 
 void nameList::bubbleSort(){
-    Name *i = head;
-    int listSize = namesCounter();
-    for(int l = 0; l < listSize -1; l++){
-        Name* j = i;
-        for(int k = 0; k < listSize - l - 1; k++){
-            if(j->counter > j->next->counter){
-                string tempName = j->name;
-                int tempCount = j->counter;
-                j->name = j->next->name;
-                j->counter = j->next->counter;
-                j->next->name = tempName;
-                j->next->counter = tempCount;
-            }
-            if(j->next != NULL){
-                j = j->next;
-            }
-        }
-        if(i->previous != NULL){
-            i = i->previous;
-        }
-        if(i->next != NULL){
-            i = i->next;
-        }
-    }
 
+  Name* start = head;
+  Name* curr = NULL;
+  Name* trail = NULL;
+  Name* temp = NULL;
+
+  int count = namesCounter();
+
+  for(int i = 0; i<count; ++i) { //for every element in the list
+
+    curr = trail = head; //set curr and trail at the start node
+
+    while (curr->next != NULL) { //for the rest of the elements in the list
+      if (curr->counter > curr->next->counter) { //compare curr and curr->next
+
+        temp = curr->next; //swap pointers for curr and curr->next
+        curr->next = curr->next->next;
+        temp->next = curr;
+
+        //now we need to setup pointers for trail and possibly head
+        if(curr == head) //this is the case of the first element swapping to preserve the head pointer
+          head = trail = temp;
+        else //setup trail correctly
+          trail->next = temp;
+        curr = temp; //update curr to be temp since the positions changed
+      }
+      //advance pointers
+      trail = curr;
+      curr = curr->next;
+    }
+  }
 }
 
 //counts names in list, used in bubbleSort
@@ -121,8 +127,8 @@ void nameList::deleteName(string name1){
 }
 
 // To help test the function. prints the name and the occurrence
-void nameList::printList(){
-    Name* temp = head;
+void nameList::printList(Name* top){
+    Name* temp = top;
     while(temp != NULL){
         cout << temp->name << " - " << temp->counter << endl;
         temp = temp->next;
@@ -258,4 +264,12 @@ Name* nameList::split(Name* node){
         secNode->next = split(secNode->next);
         return secNode;
     }
+}
+
+Name* nameList::headReturner(){
+    return head;
+}
+
+void nameList::setHead(Name* x){
+    head = x;
 }
