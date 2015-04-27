@@ -83,7 +83,7 @@ void nameList::insertName(string name1){
 
 }
 
-
+//counts number of times that a name occurs in our list
 void nameList::nameOccurrence(string name1){
     Name* temp = head;
     while(temp != NULL){
@@ -96,6 +96,7 @@ void nameList::nameOccurrence(string name1){
     cout << "Name not found" << endl;
 }
 
+//deletes a node by checking it's position and then relinking
 void nameList::deleteName(string name1){
     Name* temp = head;
     while(temp != NULL){
@@ -129,6 +130,7 @@ void nameList::printList(){
     }
 }
 
+//looks through list to find name
 void nameList::findName(string name1){
     Name* temp = head;
     while(temp != NULL){
@@ -141,6 +143,7 @@ void nameList::findName(string name1){
     cout << "Name not found" << endl;
 }
 
+//asks for number of names to print, checks for list size to verify that we don't overshoot and then prints.
 void nameList::printTopNames(int num){
     int listSize = namesCounter();
     if(num > listSize){
@@ -163,6 +166,7 @@ void nameList::printTopNames(int num){
 
 }
 
+//Asks for number of names to print, checks for list size to verify that we don't overshoot and then prints.
 void nameList::printBottomNames(int num){
     int listSize = namesCounter();
     if(num > listSize){
@@ -182,6 +186,7 @@ void nameList::printBottomNames(int num){
 
 }
 
+// looks for names with a certain count 
 void nameList::printByOcurrence(int count){
     Name* temp = head;
     bool foundCount = false;
