@@ -40,14 +40,28 @@ int main(int argc, char* argv[]){
             NL.printList(NL.headReturner());
         }
         else if(response == "2"){
-            cout << "How many names to print?" << endl;
-            getline(cin, response);
-            NL.printTopNames(stoi(response));
+            if(sorted == true)
+            {
+                cout << "How many names to print?" << endl;
+                getline(cin, response);
+                NL.printTopNames(stoi(response));
+            }
+            else
+            {
+                cout << "List has not been sorted." << endl;
+            }
         }
         else if(response == "3"){
+            if(sorted == true)
+            {
             cout << "How many names to print?" << endl;
             getline(cin, response);
             NL.printBottomNames(stoi(response));
+            }
+            else
+            {
+                cout << "List has not been sorted." << endl;
+            }
         }
         else if(response == "4"){
             cout << "Name?" << endl;
