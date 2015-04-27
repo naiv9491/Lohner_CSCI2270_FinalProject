@@ -91,7 +91,8 @@ int main(int argc, char* argv[]){
             {
                 clock_t tStart = clock();
                 NL.bubbleSort();
-                cout << endl;            
+                NL.printList(NL.headReturner());
+                cout << endl;
                 printf("Time taken: %.8fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
                 cout << endl;
                 sorted = true;
@@ -100,9 +101,10 @@ int main(int argc, char* argv[]){
             {
                 clock_t tStart = clock();
                 Name* sortedList = NL.mergeSort(NL.headReturner());
-                cout << endl;            
+                NL.printList(NL.headReturner());
+                cout << endl;
                 printf("Time taken: %.8fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
-                cout << endl;            
+                cout << endl;
                 NL.setHead(sortedList);
                 sorted = true;
             }
@@ -111,7 +113,6 @@ int main(int argc, char* argv[]){
                 cout << "Incorrect command." << endl;
             }
 
-            NL.printList(NL.headReturner());
         }
         else if(response == "9")
         {
