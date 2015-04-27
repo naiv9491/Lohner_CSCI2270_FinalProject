@@ -19,22 +19,29 @@ void nameList::bubbleSort(){
 
   int count = namesCounter();
 
-  for(int i = 0; i<count; ++i) { //for every element in the list
+  for(int i = 0; i<count; ++i)
+  { //for every element in the list
 
     curr = trail = head; //set curr and trail at the start node
 
-    while (curr->next != NULL) { //for the rest of the elements in the list
-      if (curr->counter > curr->next->counter) { //compare curr and curr->next
-
-        temp = curr->next; //swap pointers for curr and curr->next
-        curr->next = curr->next->next;
-        temp->next = curr;
+    while (curr->next != NULL)
+    { //for the rest of the elements in the list
+        if(curr->counter > curr->next->counter)
+        { //compare curr and curr->next
+            temp = curr->next; //swap pointers for curr and curr->next
+            curr->next = curr->next->next;
+            temp->next = curr;
 
         //now we need to setup pointers for trail and possibly head
-        if(curr == head) //this is the case of the first element swapping to preserve the head pointer
-          head = trail = temp;
-        else //setup trail correctly
+        if(curr == head)
+        {
+            head = trail = temp;
+            //this is the case of the first element swapping to preserve the head pointer
+        } 
+        else
+        {
           trail->next = temp;
+        } //setup trail correctly
         curr = temp; //update curr to be temp since the positions changed
       }
       //advance pointers

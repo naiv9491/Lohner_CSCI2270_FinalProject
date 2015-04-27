@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
     }
     file.close();
     // NL.bubbleSort();
-
+    bool sorted = false;
     bool quit = false;
     while(!quit){
         cout << "======Main Menu======" << endl;
@@ -57,13 +57,12 @@ int main(int argc, char* argv[]){
             cout << "What is the name to be inserted." << endl;
             getline(cin, response);
             NL.insertName(response);
-            NL.bubbleSort();
+            sorted = false;
         }
         else if(response == "6"){
             cout << "Name to be deleted?" << endl;
             getline(cin, response);
             NL.deleteName(response);
-            NL.bubbleSort();
         }
         else if(response == "7"){
             cout << "What occurance do you wish to check?" << endl;
@@ -76,16 +75,19 @@ int main(int argc, char* argv[]){
             if(response == "1")
             {
                 NL.bubbleSort();
+                sorted = true;
             }
             else if(response == "2")
             {
                Name* sortedList = NL.mergeSort(NL.headReturner());            
                NL.setHead(sortedList);
+               sorted = true;
             }
             else
             {
                 cout << "Incorrect command." << endl;
             }
+
             NL.printList(NL.headReturner());
         }
         else if(response == "9")
