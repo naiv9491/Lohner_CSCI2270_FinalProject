@@ -83,6 +83,7 @@ void nameList::insertName(string name1){
 
 }
 
+
 void nameList::nameOccurrence(string name1){
     Name* temp = head;
     while(temp != NULL){
@@ -139,6 +140,20 @@ void nameList::printTopNames(int num){
     int listSize = namesCounter();
     if(num > listSize){
         cout << "The name list is not that large" << endl;
+        return;
+    }
+    Name* temp = head;
+    while(temp->next != NULL){
+        temp = temp->next;
+    }
+    for(int i = 0; i < num; i++){
+        if(i == num-1){
+            cout << temp->name << endl;
+        }
+        else{
+            cout << temp->name << " " << endl;
+        }
+        temp = temp->previous;
     }
 
 }
