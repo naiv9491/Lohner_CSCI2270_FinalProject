@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "NameList.h"
+#include <time.h>
 
 using namespace std;
 
@@ -74,14 +75,22 @@ int main(int argc, char* argv[]){
             getline(cin, response);
             if(response == "1")
             {
+                clock_t tStart = clock();
                 NL.bubbleSort();
+                cout << endl;            
+                printf("Time taken: %.8fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+                cout << endl;
                 sorted = true;
             }
             else if(response == "2")
             {
-               Name* sortedList = NL.mergeSort(NL.headReturner());            
-               NL.setHead(sortedList);
-               sorted = true;
+                clock_t tStart = clock();
+                Name* sortedList = NL.mergeSort(NL.headReturner());
+                cout << endl;            
+                printf("Time taken: %.8fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+                cout << endl;            
+                NL.setHead(sortedList);
+                sorted = true;
             }
             else
             {
