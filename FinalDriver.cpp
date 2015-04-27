@@ -74,7 +74,7 @@ int main(int argc, char* argv[]){
         else if(response == "8"){
             cout << "What letter do you wish to check?" << endl;
             getline(cin, response);
-
+            NL.mergeSort(Name* node);
         }
         else if(response == "9")
         {

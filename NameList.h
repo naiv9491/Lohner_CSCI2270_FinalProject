@@ -24,6 +24,9 @@ class nameList{
         void insertName(std::string);
         void printList();
         int namesCounter(); //counts the number of names in the list
+        Name* mergeSort(Name* node);
+        Name* merge(Name* firstNode, Name* secondNode);
+        Name* split(Name* node);
         void printByOcurrence(int);  //print all the names that appear a certain number of times
     protected:
     private:

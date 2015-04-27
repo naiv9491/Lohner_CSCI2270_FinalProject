@@ -8,7 +8,6 @@ nameList::nameList(){
 }
 
 nameList::~nameList(){
-
 }
 
 void nameList::bubbleSort(){
@@ -202,4 +201,61 @@ void nameList::printByOcurrence(int count){
     }
 }
 
+Name* nameList::mergeSort(Name* node) {
+    Name* secNode;
 
+    if(node == NULL)
+    {
+        return NULL;
+    }
+    else if(node->next == NULL)
+    {
+        return node;
+    }
+    else
+    {
+        secNode = split(node);
+        return merge(mergeSort(node), mergeSort(secNode));
+    }
+}
+
+Name* nameList::merge(Name* firstNode, Name* secNode) {
+    if(firstNode == NULL)
+    {
+        return secNode;
+    }
+    else if(secNode == NULL)
+    {
+        return firstNode;
+    }
+    else if(firstNode->counter <= secNode->counter)
+    {
+        firstNode->next = merge(firstNode->next, secNode);
+        return firstNode;
+    }
+    else
+    {
+        secNode->next = merge(firstNode, secNode->next);
+        return secNode;
+    }
+}
+
+Name* nameList::split(Name* node){
+    Name* secNode;
+
+    if(node == NULL)
+    {
+        return NULL;
+    }
+    else if(node->next == NULL)
+    {
+        return NULL;
+    }
+    else
+    {
+        secNode = node->next;
+        node->next = secNode->next;
+        secNode->next = split(secNode->next);
+        return secNode;
+    }
+}
