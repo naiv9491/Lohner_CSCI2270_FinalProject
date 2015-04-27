@@ -2,8 +2,8 @@
 
 ##Final Project for Data Structures
 
-###Using a Trie to order a list of the most popular names on Facebook depending on different inputs.
+###Using a doubly linked list to order a list of names by occurence.
 
-Given a list of 100 names we will use a Trie in order to have the most efficient method possible of both counting and being able to use differerent functions (Most popular name starting with a certain letter, etc.).  Although the list of names we will use will be small by comparison to a real list from Facebook, we still believe that we will be able to obtain a more optimal computational time by using a Trie instead of another Data Structure.
+Given a list of 100 names we will use a doubly linked list to order them by order of occurance.  In doing so we will be able to run a variety of tests on them such as number of occurances of a certain name, priting the most and least popular names, inserting new names, finding number of occurances of names starting with a certain letter, etc.  We believe that a doubly linked list will be a very computationaly efficient way to preform this task given that insetion and deletion from the list should occur in O(1) time and most other functions should occur in O(n) time, giving an overall fair to good preformance.
 
 Team is composed of Frederik Lohner and Chris Rhoda.
