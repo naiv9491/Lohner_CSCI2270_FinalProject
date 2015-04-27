@@ -158,6 +158,19 @@ void nameList::printTopNames(int num){
 
 }
 
-
+void printByOcurrence(int count){
+    Name* temp = head;
+    bool foundCount = false;
+    while(temp != NULL){
+        if(temp->counter == count){
+            cout << temp->name << endl;
+            foundCount = true;
+        }
+        temp = temp->next;
+    }
+    if(foundCount == false){
+        cout << "No name with that count was found." << endl;
+    }
+}
 
 
