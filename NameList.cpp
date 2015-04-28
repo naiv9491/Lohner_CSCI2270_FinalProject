@@ -10,6 +10,8 @@ nameList::nameList(){
 nameList::~nameList(){
 }
 
+// sorts by pushing the most popular names to the end of the list
+// an inefficient sorting algorithm
 void nameList::bubbleSort(){
 
   Name* start = head;
@@ -37,7 +39,7 @@ void nameList::bubbleSort(){
         {
             head = trail = temp;
             //this is the case of the first element swapping to preserve the head pointer
-        } 
+        }
         else
         {
           trail->next = temp;
@@ -62,7 +64,7 @@ int nameList::namesCounter(){
     return counter;
 }
 
-// Inserts name at the end of the linked list
+// Inserts name at the end of the linked list to create an unordered list
 void nameList::insertName(string name1){
     Name* temp;
     if(head == NULL){
@@ -95,7 +97,7 @@ void nameList::insertName(string name1){
 
 }
 
-//counts number of times that a name occurs in our list
+//counts number of times that a name occurs in the list
 void nameList::nameOccurrence(string name1){
     Name* temp = head;
     while(temp != NULL){
@@ -108,7 +110,7 @@ void nameList::nameOccurrence(string name1){
     cout << "Name not found" << endl;
 }
 
-//deletes a node by checking it's position and then relinking
+//deletes a node by checking the position and then relinking
 void nameList::deleteName(string name1){
     Name* temp = head;
     while(temp != NULL){
@@ -167,11 +169,12 @@ void nameList::printTopNames(int num){
         temp = temp->next;
     }
     for(int i = 0; i < num; i++){
+        int j = i + 1;
         if(i == num-1){
-            cout << temp->name << endl;
+            cout << j << ". " << temp->name << endl;
         }
         else{
-            cout << temp->name << " " << endl;
+            cout <<  j << ". " << temp->name << " " << endl;
         }
         temp = temp->previous;
     }
@@ -187,18 +190,19 @@ void nameList::printBottomNames(int num){
     }
     Name* temp = head;
     for(int i = 0; i < num; i++){
+        int j = i + 1;
         if(i == num-1){
-            cout << temp->name << endl;
+            cout << j << ". " << temp->name << endl;
         }
         else{
-            cout << temp->name << " " << endl;
+            cout << j << ". " << temp->name << " " << endl;
         }
         temp = temp->next;
     }
 
 }
 
-// looks for names with a certain count 
+// looks for names with a certain count
 void nameList::printByOcurrence(int count){
     Name* temp = head;
     bool foundCount = false;
@@ -214,6 +218,7 @@ void nameList::printByOcurrence(int count){
     }
 }
 
+// merge sort
 Name* nameList::mergeSort(Name* node) {
     Name* secNode;
 
