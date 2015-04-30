@@ -220,6 +220,12 @@ void nameList::printByOcurrence(int count){
 
 // merge sort
 Name* nameList::mergeSort(Name* node) {
+    /* First checks if there is a list, or if the list has only one element
+       following that it splits the list ins two and then runs a merge on two
+       mergeSorted halves, essentially recursivley calling itself in order to
+       execute a divide and conquer approach */
+
+
     Name* secNode;
 
     if(node == NULL)

@@ -85,6 +85,9 @@ int main(int argc, char* argv[]){
             NL.nameOccurrence(response);
         }
         else if(response == "8"){
+            /*You can see that we used the clock function given by time.h to measure
+            the difference between a bubble and a merge sort, this gives the user a
+            very clear idea as to the differences in efficiency between the two. */
             cout << "Do you wish to sort using bubble (1) or merge (2)?" << endl;
             getline(cin, response);
             if(response == "1")
