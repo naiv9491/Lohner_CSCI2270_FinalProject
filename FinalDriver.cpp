@@ -91,7 +91,7 @@ int main(int argc, char* argv[]){
             {
                 clock_t tStart = clock();
                 NL.bubbleSort();
-                NL.printList(NL.headReturner());
+                //NL.printList(NL.headReturner());
                 cout << endl;
                 printf("Time taken: %.8fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
                 cout << endl;
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]){
             {
                 clock_t tStart = clock();
                 Name* sortedList = NL.mergeSort(NL.headReturner());
-                NL.printList(NL.headReturner());
+                //NL.printList(NL.headReturner());
                 cout << endl;
                 printf("Time taken: %.8fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
                 cout << endl;
