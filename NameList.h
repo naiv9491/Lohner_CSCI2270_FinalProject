@@ -18,6 +18,7 @@ class nameList{
         void bubbleSort();
         void findName(std::string); // input is name to be found
         void nameOccurrence(std::string); // input name, outputs how many times that name has appeared
+        void numOfOccurrences(std::string number);//Added a function that displays the names that occur a certain number of times (to fit option 7 in main menu)
         void printTopNames(int);  //input how many of the most popular names to print
         void printBottomNames(int);
         void deleteName(std::string);

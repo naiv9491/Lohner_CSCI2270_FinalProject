@@ -80,9 +80,10 @@ int main(int argc, char* argv[]){
             NL.deleteName(response);
         }
         else if(response == "7"){
-            cout << "What occurance do you wish to check?" << endl;
+            cout << "What occurrence do you wish to check?" << endl;
             getline(cin, response);
-            NL.nameOccurrence(response);
+            NL.numOfOccurrences(response);
+            //NL.nameOccurrence(response);
         }
         else if(response == "8"){
             /*You can see that we used the clock function given by time.h to measure
@@ -124,3 +125,4 @@ int main(int argc, char* argv[]){
     }
     cout << "Goodbye!" << endl;
 }
+

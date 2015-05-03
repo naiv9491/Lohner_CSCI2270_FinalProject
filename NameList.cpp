@@ -110,6 +110,22 @@ void nameList::nameOccurrence(string name1){
     cout << "Name not found" << endl;
 }
 
+//Added a new function to show the names that occur in linked list a certain number of times - for option 7
+void nameList::numOfOccurrences(string number){
+    Name* temp = head;
+    bool numName = false;
+    while(temp != NULL){
+        if(temp->counter == stoi(number)){
+            cout << temp->name << " occurs " << temp->counter << " times." << endl;
+            numName = true;
+        }
+        temp = temp->next;
+    }
+    if(numName == false)
+        cout << "No names occur that many times" << endl;
+}
+
+
 //deletes a node by checking the position and then relinking
 void nameList::deleteName(string name1){
     Name* temp = head;
